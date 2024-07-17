@@ -15,6 +15,7 @@ export class AuthService {
 
   async login( loginData : LoginDto){
     const {email, password } = loginData;
+    console.log(email);
     const user = await this.dataservice.user.findFirst({
       where :{
         email : email
