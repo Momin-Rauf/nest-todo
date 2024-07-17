@@ -7,7 +7,7 @@ export class UpdateTodoDto extends PartialType(CreateTodoDto) {
     status : TodoStatus
 }
 
-enum TodoStatus{ // ENUM DEFINE KARA HAI UPAR USE KARNE K LIYEy
+enum TodoStatus{
     ACTIVE = 'ACTIVE',
     DONE = 'DONE'
 }

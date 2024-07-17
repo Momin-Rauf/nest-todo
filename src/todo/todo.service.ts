@@ -7,17 +7,17 @@ import { Prisma } from '@prisma/client';
 @Injectable()
 export class TodoService {
 
-  constructor( private readonly databaseService : DatabaseService){} // Q1 - what is this for ?? - see below
+  constructor( private readonly databaseService : DatabaseService){} // 
 
   async create(createTodoDto: CreateTodoDto, email : string ) {
     try{
-      const user = await this.databaseService.user.findUnique({where : {email}}) //pahle find the user in the DB
+      const user = await this.databaseService.user.findUnique({where : {email}}) 
       if( !user ){
         throw new Error('User not found.')
       }
       
-      let data : Prisma.TodoCreateInput; // Corrected type name
-      data = { // this is the proper syntax
+      let data : Prisma.TodoCreateInput; 
+      data = { 
         task : createTodoDto.task ,
         description : createTodoDto.description ,
         status : 'ACTIVE',

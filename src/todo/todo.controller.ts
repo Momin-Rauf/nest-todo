@@ -23,7 +23,7 @@ export class TodoController {
   @UseGuards(JwtAuthGuard)
   @Get()
   @ApiOperation({description : "Fetch all the tasks a user have added.", summary:"Fetch all the user's tasks."})
-  findAll( @UserEmail()         // tf is this syntax bhai 
+  findAll( @UserEmail()         
     userEmail : string) {
     return this.todoService.findAll(userEmail);
   }
@@ -33,7 +33,7 @@ export class TodoController {
   @Get(':id')
   @ApiOperation({description : "Fetch the tasks by its id.", summary:"Fetch the tasks by its id."})
   findOne(@Param('id') id: string) {
-    return this.todoService.findOne(+id); // +id means id is being parsed into an int ( its coming as a string )
+    return this.todoService.findOne(+id); // 
   }
 
   @ApiBearerAuth()
